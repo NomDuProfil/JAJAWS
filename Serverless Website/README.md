@@ -1,5 +1,31 @@
 # Serverless Website
 
+Table of Contents
+=================
+
+- [Technologies](#technologies)
+- [Visualization of the Concept](#visualization-of-the-concept)
+- [Description of the section](#description-of-the-section)
+- [Module 1 : Basic configuration (S3 + CloudFront)](#module-1--basic-configuration-s3--cloudfront)
+  - [Variables](#module-1--variables)
+  - [S3 bucket](#module-1--s3-bucket)
+  - [CloudFront](#module-1--cloudfront)
+    - [CloudFront Distribution](#module-1--cloudfront-distribution)
+    - [CloudFront Origin](#module-1--cloudfront-origin)
+    - [CloudFront Custom Error Response](#module-1--cloudfront-custom-error-response)
+    - [CloudFront Default Cache Behavior](#module-1--cloudfront-default-cache-behavior)
+    - [CloudFront Restrictions](#module-1--cloudfront-restrictions)
+    - [CloudFront Viewer Certificate](#module-1--cloudfront-viewer-certificate)
+  - [Declaration and deployment](#module-1--declaration-and-deployment)
+  - [Test](#module-1--test)
+- [Module 2  : Adding a Route 53 domain](#module-2--adding-a-route-53-domain)
+  - [Variables](#module-2--variables)
+  - [S3 bucket](#module-2--s3-bucket)
+  - [CloudFront](#module-2--cloudfront)
+  - [AWS Certificate Manager (SSL Certificate)](#module-2--aws-certificate-manager-ssl-certificate)
+  - [Route 53](#module-2--route-53)
+  - [Declaration and deployment](#module-2--declaration-and-deployment)
+
 ## Technologies
 
 - S3 Bucket
@@ -17,7 +43,7 @@ In this section, we will see how to configure a serverless website. We will crea
 - One with Route 53: If you want to configure your domain name directly in AWS.
 - One without Route 53 : If you already have a domain in another provider. You will just need to add a `CNAME` record in your configuration.
 
-In addition, we will see how to deploy a static website using a framework like 'ReactJS'. Indeed, during this section, we will create a 'CodeCommit' where we can have our code and a 'Code Pipeline' to compile it and deploy it. For the moment, our website will be mainly static, but we will see how to create an API and interact with it in another section.
+We will see in another part how to deploy your code (like ReactJS frontend) in this infrastructure.
 
 ## Module 1 : Basic configuration (S3 + CloudFront)
 

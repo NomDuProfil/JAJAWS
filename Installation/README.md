@@ -1,5 +1,27 @@
 # Recommended Infrastructure
 
+Table of Contents
+=================
+
+- [Technologies](Installation/README.md#technologies)
+- [Visualization of the Concept](#visualization-of-the-concept)
+- [Description of the section](#description-of-the-section)
+- [S3 Bucket](#s3-bucket)
+- [CodeCommit](#codecommit)
+  - [Creation of the CodeCommit](#creation-of-the-codecommit)
+  - [Cloning the CodeCommit Repository](#cloning-the-codecommit-repository)
+- [CodeBuild](#codebuild)
+  - [CodeBuild Configuration](#codebuild-configuration)
+  - [CodeBuild Permissions](#codebuild-permissions)
+- [CodePipeline](#codepipeline)
+  - [Creation of the CodePipeline](#creation-of-the-codepipeline)
+  - [CodePipeline Configuration](#codepipeline-configuration)
+- [The First Push](#the-first-push)
+  - [Buildspec](#buildspec)
+  - [Provider](#provider)
+  - [Push](#push)
+- [Conclusion](#conclusion)
+
 ## Technologies
 
 - S3 Bucket
