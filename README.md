@@ -1,6 +1,8 @@
+![Logo](./img/JAJAWS.png)
+
 # JAJAWS
 
-JAJAWS aims to provide tips for rapidly deploying an AWS infrastructure with Terraform.
+JAJAWS aims to provide tips for rapidly deploying an AWS infrastructure with Terraform. I want to combine different aspects like Offensive Security, Cloud or Phishing. The main idea is to provide you tutorials and Terraform module that can give you some infrastructure to respond to a need.
 
 Before getting started, it is recommended to read the 'Recommended Infrastructure' section, which will serve as the foundation for all the sections provided.
 

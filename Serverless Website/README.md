@@ -25,6 +25,7 @@ Table of Contents
   - [AWS Certificate Manager (SSL Certificate)](#module-2--aws-certificate-manager-ssl-certificate)
   - [Route 53](#module-2--route-53)
   - [Declaration and deployment](#module-2--declaration-and-deployment)
+- [Conclusion](#conclusion)
 
 ## Technologies
 
@@ -594,3 +595,7 @@ terraform apply
 ```
 
 ⚠️❗ **Important Information** : Because of the DNS validation, this deployment can take times. By experience, it can take up to 30 minutes.
+
+## Conclusion
+
+With this part, you should be able to have a serverless Website with CloudFront and S3. In addition, you should have an SSL certificate with a Route 53 domain. This infrastructure provides you a website with good performance and small price.
