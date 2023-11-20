@@ -10,14 +10,22 @@ Table of Contents
 =================
 
 - [Recommended Infrastructure](Installation/README.md#recommended-infrastructure)
-  - [Technologies](Installation/README.md#technologies)
+  - [Keywords](Installation/README.md#keywords)
     - S3 Bucket
     - CodeBuild
     - CodePipeline
     - CodeCommit
 - [Serverless Website](Serverless%20Website/README.md#serverless-website)
-  - [Technologies](Serverless%20Website/README.md#technologies)
+  - [Keywords](Serverless%20Website/README.md#keywords)
     - S3 Bucket
     - Cloudfront
     - Route53
     - ACM (AWS Certificate Manager)
+- [Serverless API QR Code](Serverless%20API%20QR%20Code/README.md#serverless-api-qr-code)
+  - [Keywords](Serverless%20API%20QR%20Code/README.md#keywords)
+    - API Gateway
+    - API Key
+    - QR Code
+    - Lambda
+    - Layers
+    - Swagger

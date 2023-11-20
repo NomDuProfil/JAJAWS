@@ -1,0 +1,121 @@
+openapi: 3.0.3
+
+info:
+  version: '1.0'
+  title: "JAJAWS QR Code API"
+  description: "API that generate QR Code image"
+servers:
+  - url: 'https://jajaws.example.com'
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+x-amazon-apigateway-request-validators:
+  all:
+    validateRequestBody: true
+    validateRequestParameters: true
+x-amazon-apigateway-request-validator: all
+paths:
+  "/generate_qr_code":
+    options:
+      summary: CORS support
+      description: |
+        Enable CORS by returning correct headers
+      tags: ["QRCode"]
+      responses:
+        200:
+          description: Default response for CORS method
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
+          content: {}
+      x-amazon-apigateway-integration:
+        type: mock
+        requestTemplates:
+          application/json: |
+            {
+              "statusCode" : 200
+            }
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,recaptcha-response'''
+              method.response.header.Access-Control-Allow-Methods: '''*'''
+              method.response.header.Access-Control-Allow-Origin: '''*'''
+            responseTemplates:
+              application/json: |
+                {}
+    post:
+      tags: ["QRCode"]
+      description: "Submit QR Code parameters."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text_to_convert:
+                  type: string
+                  example: Hello World!
+              required:
+                - text_to_convert
+              additionalProperties: false 
+      responses:
+        '200':
+          description: "Gives the QR Code in base64"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: SmVhbi1NaWNoZWwgSmFycmUgLSBPeHlnZW5lLCBQdC4gNA==
+        '400':
+          description: "Bad parameters"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Something is missing
+        '401':
+          description: "Bad permissions"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: API Key is missing
+        '403':
+          description: "Bad permissions"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: API Key is missing
+      x-amazon-apigateway-integration:
+        uri: "${uri_start}jajaws_qr_code${uri_end}"
+        httpMethod: "POST"
+        type: "aws_proxy"
+      x-amazon-apigateway-api-key-source: HEADER
+      security:
+        - ApiKeyAuth: []
